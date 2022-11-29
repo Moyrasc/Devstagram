@@ -9,8 +9,9 @@ Crea tu cuenta Devstagram
     <div class="md:w-6/12 p-5">
        <img src="{{asset('img/login.jpg')}}" alt="imagen registro usuario"/>
     </div>
-    <div class="md:w-4/12  bg-white p-6 rounded-lg shadow-x">
-        <form>
+    <div class="md:w-4/12  bg-white p-5 rounded-lg shadow-x">
+        <form action="{{route('register')}}" method="POST">
+            @csrf
             <div>
                 <label for="name" class="mb-2 block uppercase text-gray-500 font-bold"> 
                     Nombre 
@@ -73,7 +74,7 @@ Crea tu cuenta Devstagram
             </div>
             <input type="submit"
             value="Crear cuenta"
-            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold p-3 text-white rounded-lg"
+            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold p-3 text-white rounded-lg w-full"/>
         </form>
     </div>
 

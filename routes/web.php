@@ -8,5 +8,6 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', function () {
     return view('principal');
 });
-// controlador
-Route::get('/crear-cuenta', [RegisterController::class, 'index']);
+// controladores
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
