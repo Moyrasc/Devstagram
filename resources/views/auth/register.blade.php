@@ -10,7 +10,7 @@ Crea tu cuenta Devstagram
        <img src="{{asset('img/login.jpg')}}" alt="imagen registro usuario"/>
     </div>
     <div class="md:w-4/12  bg-white p-5 rounded-lg shadow-x">
-        <form action="{{route('register')}}" method="POST">
+        <form action="{{route('register')}}" method="POST" novalidate>
             @csrf
             <div>
                 <label for="name" class="mb-2 block uppercase text-gray-500 font-bold"> 
@@ -39,8 +39,13 @@ Crea tu cuenta Devstagram
                 name="username" 
                 type="text" 
                 placeholder="Nombre Usuario" 
-                class="border p-3 w-full rounded-lg"
+                class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
+                value="{{old('username')}}"
                 />
+                
+                @error('username')
+                    <p class="bg-red-500 text-white my-2 rounded-md text-sm p-2">{{$message}}</p>
+                @enderror
             </div>
             <div class="mb-5">
                 <label for="email" class="mb-2 block uppercase text-gray-500 font-bold"> 
@@ -51,8 +56,13 @@ Crea tu cuenta Devstagram
                 name="email" 
                 type="email" 
                 placeholder="Correo electrónico" 
-                class="border p-3 w-full rounded-lg"
+                class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
+                value="{{old('email')}}"
                 />
+                
+                @error('email')
+                    <p class="bg-red-500 text-white my-2 rounded-md text-sm p-2">{{$message}}</p>
+                @enderror
             </div>
             <div class="mb-5">
                 <label for="password" class="mb-2 block uppercase text-gray-500 font-bold"> 
@@ -63,8 +73,13 @@ Crea tu cuenta Devstagram
                 name="password" 
                 type="password" 
                 placeholder="Contraseña" 
-                class="border p-3 w-full rounded-lg"
+                class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
+                value="{{old('password')}}"
                 />
+                
+                @error('password')
+                    <p class="bg-red-500 text-white my-2 rounded-md text-sm p-2">{{$message}}</p>
+                @enderror
             </div>
             <div class="mb-5">
                 <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold"> 
