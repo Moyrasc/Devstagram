@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-¡Hola Mundo! Página Principal
+ Página Principal
 @endsection
 
 @section('contenido')
