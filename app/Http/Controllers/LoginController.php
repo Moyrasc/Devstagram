@@ -19,8 +19,9 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
+
         // Si la validación no es correcta... mensaje de error
-        if (!auth()->attempt($request->only('email', 'password'))) {
+        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             //back te devuelve a la vista con el mensaje que hemos añadido
             return back()->with('mensaje', 'Email y/o contraseña incorrectos');
         }

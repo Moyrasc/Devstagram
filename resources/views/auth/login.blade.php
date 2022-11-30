@@ -49,6 +49,9 @@ Inicia Sesión
                     <p class="bg-red-500 text-white my-2 rounded-md text-sm p-2">{{$message}}</p>
                 @enderror
             </div>
+            <div class="mb-5">
+                <input type="checkbox" name="remember"> <label class=" text-gray-500 text-md">No cerrar sesión </label>
+            </div>
             
             <input type="submit"
             value="Inicia Sesión"
