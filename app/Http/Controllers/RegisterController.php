@@ -15,6 +15,9 @@ class RegisterController extends Controller
     }
     public function store(Request $request)
     {
+        //Modificar el request
+        //el helper slug convierte el nombre de usuario en formato url..(quita espacios,convierte a minúscula...)
+        $request->request->add(['username' => Str::slug($request->username)]);
         // Validación 
         $this->validate($request, [
             'name' => 'required|min:3|max:20',
@@ -24,10 +27,20 @@ class RegisterController extends Controller
         ]);
         User::create([
             'name' => $request->name,
-            'username' => Str::slug($request->username),
+            'username' => $request->username,
             'email' => $request->email,
+            //encripta el pass
             'password' => Hash::make($request->password)
 
         ]);
+        //Autenticar usuario :
+        // auth()->attempt([
+        //     'email' => $request->email,
+        //     'password' => $request->password
+        // ]);
+        auth()->attempt($request->only('email', 'password'));
+
+        //Redireccionar al usuario
+        return redirect()->route('posts.index');
     }
 }
