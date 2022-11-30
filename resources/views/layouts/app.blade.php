@@ -4,19 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title> Devstagram - @yield('titulo') </title>
-   @vite('resources/css/app.css')
+    @vite('resources/css/app.css')
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head> 
 <body class="bg-gray-100">
 <header class="p-5 border-b bg-white shadow">
     <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-4xl font-black">Devstagram</h1>
+        @auth
         <nav class="flex gap-2 items-center">
-            <a class=" font-bold text-gray-500 text-sm uppercase" href="#">Login</a>
+            <a class=" font-bold text-gray-500 text-sm " href="#"> Hola: <span>{{auth()->user()->username}}</span></a>
+            <form method="POST" action="{{route('logout')}}">
+                @csrf
+                <button type="submit" class=" font-bold text-gray-500 text-sm uppercase" ">Cerrar Sesión</button>
+            </form>    
+            </nav>
+            
+        @endauth
+        @guest
+            <nav class="flex gap-2 items-center">
+            <a class=" font-bold text-gray-500 text-sm uppercase" href="{{route('login')}}">Login</a>
             <a class=" font-bold text-gray-500 text-sm uppercase" href="{{route('register')}}">Crear cuenta</a>
         </nav>
+        @endguest
     </div>
 </header>
 <main class="container mx-auto mt-10">
