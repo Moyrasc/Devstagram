@@ -9,7 +9,7 @@ Crea tu cuenta Devstagram
     <div class="md:w-6/12 p-5">
        <img src="{{asset('img/login.jpg')}}" alt="imagen registro usuario"/>
     </div>
-    <div class="md:w-4/12  bg-white p-5 rounded-lg shadow-x">
+    <div class="md:w-4/12  bg-white p-5 rounded-lg shadow-xl">
         <form action="{{route('register')}}" method="POST" novalidate>
             @csrf
             <div>

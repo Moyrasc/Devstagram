@@ -25,6 +25,6 @@ class LoginController extends Controller
             //back te devuelve a la vista con el mensaje que hemos añadido
             return back()->with('mensaje', 'Email y/o contraseña incorrectos');
         }
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }
