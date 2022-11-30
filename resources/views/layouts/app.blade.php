@@ -7,7 +7,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title> Devstagram - @yield('titulo') </title>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
 </head> 
 <body class="bg-gray-100">
 <header class="p-5 border-b bg-white shadow">
@@ -22,7 +25,7 @@
                 </svg>
                 Crear
             </a>
-            <a class=" font-bold text-gray-500 text-sm " href="#"> Hola: <span>{{auth()->user()->username}}</span></a>
+            <a class=" font-bold text-gray-500 text-sm " href="{{route('posts.index',auth()->user()->username)}}"> Hola: <span>{{auth()->user()->username}}</span></a>
             <form method="POST" action="{{route('logout')}}">
                 @csrf
                 <button type="submit" class=" font-bold text-gray-500 text-sm uppercase" ">Cerrar Sesión</button>
