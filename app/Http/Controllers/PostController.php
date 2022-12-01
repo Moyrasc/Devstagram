@@ -30,8 +30,22 @@ class PostController extends Controller
             'descripcion' => 'required',
             'imagen' => 'required'
         ]);
+        //Crear registros:
+        // Post::create([
+        //     'titulo' => $request->titulo,
+        //     'descripcion' => $request->descripcion,
+        //     'imagen' => $request->imagen,
+        //     'user_id' => auth()->user()->id
+        // ]);
+        // Otra forma de crear registros:
+        // $post = new Post;
+        // $post->titulo = $request->titulo;
+        // $post->descripcion = $request->descripcion;
+        // $post->save();
 
-        Post::create([
+        // Crear registros utilizando las relaciones que hemos creado
+
+        $request->user()->posts()->create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
             'imagen' => $request->imagen,
