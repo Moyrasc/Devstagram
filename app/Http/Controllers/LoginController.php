@@ -6,12 +6,10 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    //
     public function index()
     {
         return view('auth.login');
     }
-
     public function store(Request $request)
     {
         //Validación
@@ -19,7 +17,6 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
         // Si la validación no es correcta... mensaje de error
         if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             //back te devuelve a la vista con el mensaje que hemos añadido
