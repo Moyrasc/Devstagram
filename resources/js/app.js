@@ -31,6 +31,6 @@ dropzone.on('success', function(file,response){
     document.querySelector('[name="imagen"]').value = response.imagen;
 })
 
-dropzone.on('removeFile', function(){
+dropzone.on('removefile', function(){
     document.querySelector('[name="imagen"]').value = "";
 })
