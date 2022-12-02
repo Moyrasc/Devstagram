@@ -16,11 +16,17 @@ class ComentarioController extends Controller
         $this->validate($request, [
             'comentario' => 'required|max:255'
         ]);
+        // dd($user->id);
         //Almacenamiento
         Comentario::create([
             'user_id' => auth()->user()->id,
-            'post_id=' => $post->id,
+            'post_id' => $post->id,
             'comentario' => $request->comentario
         ]);
+        // Comentario::create([
+        //     'user_id' => $user->id,
+        //     'post_id' => $post->id,
+        //     'comentario' => $request->comentario
+        // ]);
     }
 }

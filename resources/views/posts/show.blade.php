@@ -23,7 +23,7 @@
         <div class="shadow bg-white p-5 mb-5">
             @auth
                 
-            @endauth
+            
             <p class="text-xl font-bold text-center mb-4">Escribe un comentario</p>
             <form action="{{route('comentarios.store',['post'=>$post, 'user'=>$user])}}" method="POST">
                 @csrf
@@ -48,6 +48,7 @@
             class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold p-3 text-white rounded-lg w-full"/>
             </div>   
             </form>
+            @endauth
         </div>
     </div>
 </div>
