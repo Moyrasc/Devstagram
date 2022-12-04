@@ -23,10 +23,8 @@ class ComentarioController extends Controller
             'post_id' => $post->id,
             'comentario' => $request->comentario
         ]);
-        // Comentario::create([
-        //     'user_id' => $user->id,
-        //     'post_id' => $post->id,
-        //     'comentario' => $request->comentario
-        // ]);
+
+        //Mensaje verificación
+        return back()->with('mensaje', 'Comentario enviado');
     }
 }
