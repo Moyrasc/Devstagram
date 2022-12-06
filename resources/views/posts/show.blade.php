@@ -36,7 +36,7 @@
                 @endif    
                 
                 @endauth
-            <p> 0 Me gusta </p>
+            <p class="font-bold"> {{$post->likes->count()}} <span class="font-normal">Me gusta </span></p>
         </div>
         <div>
             <p class="font-bold">{{$post->user->username}}</p>
