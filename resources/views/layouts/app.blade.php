@@ -11,8 +11,7 @@
     @vite('resources/js/app.js')
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-
-
+    @livewireStyles
 </head> 
 <body class="bg-gray-100">
 <header class="p-5 border-b bg-white shadow">
@@ -55,6 +54,6 @@
     Devstagram - Noe Sola {{now()-> year}}
     
 </footer>
+@livewireScripts
 </body>
-
 </html>
