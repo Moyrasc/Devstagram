@@ -12,11 +12,6 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 
-// Routing tipo closure
-// Route::get('/', function () {
-//     return view('principal');
-// });
-
 // Controladores
 Route::get('/', HomeController::class)->name('home');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
