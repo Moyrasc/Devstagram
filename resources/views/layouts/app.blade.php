@@ -51,7 +51,7 @@
     @yield('contenido')
 </main>
 <footer class="text-center p-5 text-gray-500 uppercase font-bold mt-10">
-    Devstagram - Noe Sola {{now()-> year}}
+    Devstagram - Todos los derechos reservados - Diciembre  {{now()-> year}}
     
 </footer>
 @livewireScripts
