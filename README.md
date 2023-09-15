@@ -34,4 +34,4 @@ Es necesario tener ambas terminales levantadas para el correcto funcionamiento d
 
 ### 🌟 🌟Proyecto Desplegado 🌟 🌟  
 
-- https://devstagram-production-052e.up.railway.app/login
+- https://devstagram-app.domcloud.io/register
