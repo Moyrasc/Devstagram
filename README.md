@@ -1,7 +1,16 @@
+# Devstagram 📝 📝 
+
+<img src="public\img\devstagram.png" alt="preview-proyecto"/>
+
+<br/>
+
 <img src="public\img\portada.png" alt="preview-proyecto"/>
+
+<br/>
+
 <img src="public\img\principal.png" alt="preview-portada">
 
-## Devstagram 📝 📝 
+
 
 Clon de la aplicación Instagram enfocada para desarrolladores:
 
